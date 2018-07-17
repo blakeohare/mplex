@@ -15,36 +15,21 @@ namespace MPlex.Drawing
 
         public Bitmap(string path)
         {
-            int sc = bridge.Send("create-bitmap-file", this.nativeData, path);
-            if (sc == 0)
-            {
-                this.Width = (int)this.nativeData[Public.BITMAP_WIDTH];
-                this.Height = (int)this.nativeData[Public.BITMAP_HEIGHT];
-            }
-            else
-            {
-                throw new Exception(bridge.ErrorMessage);
-            }
+            bridge.SendOrThrow("create-bitmap-file", this.nativeData, path);
+            this.Width = (int)this.nativeData[Public.BITMAP_WIDTH];
+            this.Height = (int)this.nativeData[Public.BITMAP_HEIGHT];
         }
 
         public Bitmap(int width, int height)
         {
-            int sc = bridge.Send("create-bitmap-size", this.nativeData, width, height);
-            if (sc == 0)
-            {
-                this.Width = width;
-                this.Height = height;
-            }
-            else
-            {
-                throw new Exception(bridge.ErrorMessage);
-            }
+            bridge.SendOrThrow("create-bitmap-size", this.nativeData, width, height);
+            this.Width = width;
+            this.Height = height;
         }
 
         public void Save(string path)
         {
-            int sc = bridge.Send("save-bitmap", this.nativeData, path);
-            if (sc != 0) throw new Exception(bridge.ErrorMessage);
+            bridge.SendOrThrow("save-bitmap", this.nativeData, path);
         }
     }
 }
