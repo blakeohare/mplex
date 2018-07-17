@@ -1,28 +1,27 @@
-import native
+from mplex.native import REGISTRY as _reg
+
+_BRIDGE = _reg.get('Drawing')
 
 class Bitmap:
 
 	def __init__(self, widthOrFilePath, height = None):
-		if height == None and type(widthOrFilePath) == type(''):
-			sc = native.send('create-bitmap-file', (self, widthOrFilePath))
-			if sc == 0:
-				self.width = native.int256[0]
-				self.height = native.int256[1]
-			else:
-				raise Exception(native.error_msg)
-		elif type(widthOrFilePath) == type(1) and type(height) == type(1):
-			sc = native.send('create-bitmap-size', (self, widthOrFilePath, height))
-			if sc == 0:
-				self.width = native.int256[0]
-				self.height = native.int256[1]
-			else:
-				raise Exception(native.error_msg)
+		self.nativeData = {}
+		if height == None and isinstance(widthOrFilePath, str):
+			sc = _BRIDGE.send('create-bitmap-file', (self.nativeData, widthOrFilePath))
+			if sc != 0:
+				raise Exception(_BRIDGE.error_msg)
+		elif isinstance(widthOrFilePath, int) and isinstance(height, int):
+			sc = _BRIDGE.send('create-bitmap-size', (self.nativeData, widthOrFilePath, height))
+			if sc != 0:
+				raise Exception(_BRIDGE.error_msg)
 		else:
 			raise Exception("Invalid arguments")
+		self.width = self.nativeData['width']
+		self.height = self.nativeData['height']
 	
 	def save(self, path):
-		sc = native.send('save-bitmap', (self, path))
+		if not isinstance(path, str):
+			raise Exception("Invalid arguments.")
+		sc = _BRIDGE.send('save-bitmap', (self.nativeData, path))
 		if sc != 0:
-			raise Exception(native.error_msg)
-	
-	
+			raise Exception(_BRIDGE.error_msg)

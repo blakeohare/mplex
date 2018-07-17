@@ -1,1 +1,3 @@
-from Bitmap import *
+import mplex.native.drawing
+
+from .Bitmap import *
