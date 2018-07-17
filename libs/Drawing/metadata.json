@@ -1,0 +1,27 @@
+{
+	"name": "Drawing",
+	"methods": [
+		{
+			"name": "create-bitmap-file",
+			"args": [
+				{ "name": "nativeData", "type": "Dictionary<int, object>" },
+				{ "name": "path", "type": "string" }
+			]
+		},
+		{
+			"name": "create-bitmap-size",
+			"args": [
+				{ "name": "nativeData", "type": "Dictionary<int, object>" },
+				{ "name": "width", "type": "int" },
+				{ "name": "height", "type": "int" }
+			]
+		},
+		{
+			"name": "save-bitmap",
+			"args": [
+				{ "name": "nativeData", "type": "Dictionary<int, object>" },
+				{ "name": "path", "type": "string" }
+			]
+		}
+	]
+}

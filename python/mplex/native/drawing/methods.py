@@ -47,4 +47,3 @@ def save_bitmap(bridge, args):
 	except:
 		return bridge.set_error(1, "Could not write to file.")
 	return 0
-	

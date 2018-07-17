@@ -1,13 +1,16 @@
+
 class NativeBridge:
 	def __init__(self, cmdByName):
 		self.error_msg = None
 		self.commands = cmdByName
 	
 	def send(self, cmd, args):
-		return self.commands[cmd](self, args)
+		sc = self.commands[cmd](self, args)
+		if sc == -1: self.error_msg = "An unknown error occurred."
+		return sc
 	
 	def sendOrThrow(self, cmd, args):
-		if self.commands[cmd](self, args) != 0:
+		if self.send(cmd, args) != 0:
 			raise Exception(self.error_msg)
 	
 	def set_error(self, id, message):
