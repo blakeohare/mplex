@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPlexTestRunner", "MPlexTestRunner\MPlexTestRunner.csproj", "{B76BF599-7DAD-45C1-AEB9-C51EC886B283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drawing", "Drawing\Drawing.csproj", "{46B10D87-1E21-420C-B6E6-E04596A4A503}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeDrawing", "Native\NativeDrawing\NativeDrawing.csproj", "{EA66527A-2C24-42D8-886E-856E90718971}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeCommon", "Native\NativeCommon\NativeCommon.csproj", "{BE8EDD6A-5665-4231-B79F-0D4A7066E877}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B76BF599-7DAD-45C1-AEB9-C51EC886B283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B76BF599-7DAD-45C1-AEB9-C51EC886B283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B76BF599-7DAD-45C1-AEB9-C51EC886B283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B76BF599-7DAD-45C1-AEB9-C51EC886B283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B10D87-1E21-420C-B6E6-E04596A4A503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B10D87-1E21-420C-B6E6-E04596A4A503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B10D87-1E21-420C-B6E6-E04596A4A503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B10D87-1E21-420C-B6E6-E04596A4A503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA66527A-2C24-42D8-886E-856E90718971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA66527A-2C24-42D8-886E-856E90718971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA66527A-2C24-42D8-886E-856E90718971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA66527A-2C24-42D8-886E-856E90718971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE8EDD6A-5665-4231-B79F-0D4A7066E877}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE8EDD6A-5665-4231-B79F-0D4A7066E877}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE8EDD6A-5665-4231-B79F-0D4A7066E877}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE8EDD6A-5665-4231-B79F-0D4A7066E877}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
