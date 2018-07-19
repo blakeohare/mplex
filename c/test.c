@@ -13,7 +13,7 @@ int main()
 	printf("Dictionary size: %d\n", d->size);
 	printf("Dictionary at 2: %d\n", dictionary_get_int_int(d, 2, -1));
 
-	Bitmap* bmp = new_bitmap_from_file("totoro.png");
+	Bitmap* bmp = new_bitmap_from_file("sample_image.png");
 	printf("Image is %d by %d pixels.\n", bmp->width, bmp->height);
 	bitmap_save(bmp, "totoro3.png");
 }
