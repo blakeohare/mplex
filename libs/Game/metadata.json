@@ -1,0 +1,132 @@
+{
+	"name": "Game",
+	"methods": [
+		{
+			"name": "create-window",
+			"args": [
+				{ "name": "gameWidth", "type": "int" },
+				{ "name": "gameHeight", "type": "int" },
+				{ "name": "pixelWidth", "type": "int" },
+				{ "name": "pixelHeight", "type": "int" },
+				{ "name": "title", "type": "string" },
+				{ "name": "fps", "type": "int" }
+			],
+			"returns": {
+				"type": "void"
+			}
+		},
+		{
+			"name": "show-window",
+			"args": [
+				{ "name": "windowId", "type": "int" }
+			],
+			"returns": {
+				"type": "void"
+			}
+		},
+		{
+			"name": "is-window-creation-blocking",
+			"args": [],
+			"returns": {
+				"type": "bool",
+				"description": "True if calling this function will block while showing the window."
+			}
+		},
+		{
+			"name": "set-game-loop-callback",
+			"args": [
+				{ "name": "windowId", "type": "int" },
+				{ "name": "callback", "type": "Function<void, void>" }
+			],
+			"returns": {
+				"type": "void"
+			}
+		},
+		{
+			"name": "destroy-window",
+			"args": [
+				{ "name": "windowId", "type": "int" }
+			],
+			"returns": {
+				"type": "void"
+			}
+		},
+		{
+			"name": "set-clear-color",
+			"args": [
+				{ "name": "windowId", "type": "int" },
+				{ "name": "r", "type": "int" },
+				{ "name": "g", "type": "int" },
+				{ "name": "b", "type": "int" }
+			],
+			"returns": {
+				"type": "void"
+			}
+		},
+		{
+			"name": "draw-rectangle",
+			"args": [
+				{ "name": "windowId", "type": "int" },
+				{ "name": "x", "type": "int" },
+				{ "name": "y", "type": "int" },
+				{ "name": "width", "type": "int" },
+				{ "name": "height", "type": "int" },
+				{ "name": "r", "type": "int" },
+				{ "name": "g", "type": "int" },
+				{ "name": "b", "type": "int" },
+				{ "name": "a", "type": "int" }
+			],
+			"returns": {
+				"type": "void"
+			}
+		},
+		{
+			"name": "draw-ellipse",
+			"args": [
+				{ "name": "windowId", "type": "int" },
+				{ "name": "x", "type": "int" },
+				{ "name": "y", "type": "int" },
+				{ "name": "width", "type": "int" },
+				{ "name": "height", "type": "int" },
+				{ "name": "r", "type": "int" },
+				{ "name": "g", "type": "int" },
+				{ "name": "b", "type": "int" },
+				{ "name": "a", "type": "int" }
+			],
+			"returns": {
+				"type": "void"
+			}
+		},
+		{
+			"name": "draw-triangle",
+			"args": [
+				{ "name": "windowId", "type": "int" },
+				{ "name": "x1", "type": "int" },
+				{ "name": "y1", "type": "int" },
+				{ "name": "x2", "type": "int" },
+				{ "name": "y2", "type": "int" },
+				{ "name": "x3", "type": "int" },
+				{ "name": "y3", "type": "int" },
+				{ "name": "r", "type": "int" },
+				{ "name": "g", "type": "int" },
+				{ "name": "b", "type": "int" },
+				{ "name": "a", "type": "int" }
+			],
+			"returns": {
+				"type": "void"
+			}
+		},
+		{
+			"name": "pop-events",
+			"args": [
+				{ "name": "windowId", "type": "int" },
+				{ "name": "intOut", "type": "Array<int>" },
+				{ "name": "strOut", "type": "Array<string>" }
+			],
+			"returns": {
+				"type": "int",
+				"description": "The number of events that have been pushed to the output args."
+			}
+		}
+	]
+}

@@ -22,6 +22,42 @@
 				{ "name": "nativeData", "type": "Dictionary<int, object>" },
 				{ "name": "path", "type": "string" }
 			]
+		},
+		{
+			"name": "get-bitmap-edit-session",
+			"args": [
+				{ "name": "nativeData", "type": "Dictionary<int, object>" },
+				{ "name": "bmpNativeData", "type": "Dictionary<int, object>" }
+			]
+		},
+		{
+			"name": "flush-bitmap-edit-session",
+			"args": [
+				{ "name": "nativeData", "type": "Dictionary<int, object>" },
+				{ "name": "bmpNativeData", "type": "Dictionary<int, object>" }
+			]
+		},
+		{
+			"name": "draw-rectangle",
+			"args": [
+				{ "name": "nativeData", "type": "Dictionary<int, object>" },
+				{ "name": "x", "type": "int" },
+				{ "name": "y", "type": "int" },
+				{ "name": "r", "type": "int" },
+				{ "name": "g", "type": "int" },
+				{ "name": "b", "type": "int" },
+				{ "name": "a", "type": "int" }
+			]
+		},
+		{
+			"name": "draw-bitmap",
+			"args": [
+				{ "name": "pixelNativeData", "type": "Dictionary<int, object>" },
+				{ "name": "bmp2NativeData", "type": "Dictionary<int, object>" },
+				{ "name": "pixel2NativeData", "type": "Dictionary<int, object>" },
+				{ "name": "x", "type": "int" },
+				{ "name": "y", "type": "int" }
+			]
 		}
 	]
 }
