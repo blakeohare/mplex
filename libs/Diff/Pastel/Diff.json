@@ -1,0 +1,16 @@
+{
+	"source": "pastel",
+	"targets": [
+		{
+			"name": "csharp",
+			"platform": "csharp",
+			"output": "../../../output/CSharp/Diff/PastelGen",
+			"namespace": "Diff.Backend"
+		},
+		{
+			"name": "python",
+			"platform": "python",
+			"output": "python/gen"
+		}
+	]
+}

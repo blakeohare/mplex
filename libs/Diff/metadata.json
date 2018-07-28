@@ -1,0 +1,20 @@
+{
+	"name": "Diff",
+	"hasPastel": true,
+	"methods": [
+		{
+			"name": "diff-text",
+			"args": [
+				{ "name": "text1", "type": "Array<string>" },
+				{ "name": "text1Length", "type": "int" },
+				{ "name": "text2", "type": "Array<string>" },
+				{ "name": "text2Length", "type": "int" },
+				{ "name": "textOut", "type": "List<string>" },
+				{ "name": "changeOut", "type": "List<int>" }
+			],
+			"returns": {
+				"type": "void"
+			}
+		}
+	]
+}

@@ -29,7 +29,11 @@ def read_file_text(path):
 	return text
 
 def parse_json(text):
-	return json.loads(text)
+	try:
+		return json.loads(text)
+	except json.decoder.JSONDecodeError as e:
+		print("JSON error, line " + str(e.lineno) + ", column " + str(e.colno))
+		return None
 	
 def get_libraries():
 	library_names = get_directories('libs', FILES_ONLY)
@@ -38,6 +42,9 @@ def get_libraries():
 		manifest_file = os.path.join('libs', name, 'metadata.json')
 		if os.path.exists(manifest_file):
 			metadata = parse_json(read_file_text(manifest_file))
+			if metadata == None:
+				print("Error in " + name + "'s metadata.json file.")
+				continue
 			metadata['path'] = os.path.join('libs', name)
 			output.append(metadata)
 	return output

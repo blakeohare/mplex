@@ -1,0 +1,82 @@
+
+int GenerateTextDiff(Array<string> text1, int size1, Array<string> text2, int size2, List<string> linesOut, List<int> lineOpOut) {
+	
+	// TODO: trim down the identical beginning and ends to make simple cases much easier
+	
+	int width = size2 + 1;
+	int height = size1 + 1;
+	
+	// the following arrays represent a 2D grid where index = y * width + x
+	// The x coordinates correspond to that string index - 1 in text2
+	// The y coordinates correspond to that string index - 1 in text1
+	
+	// The current cheapest path cost to get to this point
+	Array<int> costs = new Array<int>(width * height);
+	
+	// The previous step in the cheapest path: 0 -> up+left, 1 -> up, 2 -> left
+	Array<int> source = new Array<int>(width * height);
+	
+	int x = 0;
+	int y = 0;
+	while (x < width) {
+		costs[x] = x;
+		source[x] = x - 1;
+		x += 1;
+	}
+	while (y < height) {
+		costs[y * width] = y;
+		source[y * width] = (y - 1) * width;
+		y += 1;
+	}
+	
+	int index = 0;
+	y = 1;
+	while (y < height) {
+		x = 1;
+		index = y * width + x;
+		while (x < width) {
+			if (text1[y - 1] == text2[x - 1]) {
+				costs[index] = costs[index - 1 - width];
+				source[index] = 0;
+			} else if (costs[index - 1] < costs[index - width]) {
+				costs[index] = costs[index - 1] + 1;
+				source[index] = 2;
+			} else {
+				costs[index] = costs[index - width] + 1;
+				source[index] = 1;
+			}
+			x += 1;
+			index += 1;
+		}
+		y += 1;
+	}
+	
+	x = width - 1;
+	y = height - 1;
+	int s = 0;
+	while (x != 0 || y != 0) {
+		s = source[y * width + x];
+		if (s == 0) {
+			linesOut.Add(text1[y - 1]);
+			lineOpOut.Add(0);
+			y -= 1;
+			x -= 1;
+		} else if (s == 1) {
+			linesOut.Add(text1[y - 1]);
+			lineOpOut.Add(-1);
+			y -= 1;
+		} else {
+			linesOut.Add(text2[x - 1]);
+			lineOpOut.Add(1);
+			x -= 1;
+		}
+	}
+	
+	$free(costs);
+	$free(source);
+	
+	linesOut.Reverse();
+	lineOpOut.Reverse();
+	
+	return 0;
+}
