@@ -1,3 +1,5 @@
+TranslationHelper_NoneListOfOne = [None]
+
 def GenerateTextDiff(text1, size1, text2, size2, linesOut, lineOpOut):
   width = (size2 + 1)
   height = (size1 + 1)

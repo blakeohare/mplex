@@ -10,7 +10,7 @@
 		{
 			"name": "python",
 			"platform": "python",
-			"output": "python/gen"
+			"output": "../../../output/Python/Diff/pyNative/pastelgen"
 		}
 	]
 }

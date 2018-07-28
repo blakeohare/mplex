@@ -21,7 +21,7 @@ class PythonGenerator:
 				output.append(hyphens_to_camel(arg['name']))
 			output.append('):\n')
 			output.append('\t\traise Exception("Not implemented.")\n\n')
-		output.append('\tdef _mplex_validate(): pass\n')
+		output.append('\tdef _mplex_validate(self): pass\n')
 		write_file_and_create_dir(os.path.join(output_directory, 'pyNative', 'genbridge.py'), ''.join(output))
 		write_file_and_create_dir(os.path.join(output_directory, 'pyNative', '__init__.py'), 'from .bridge import BRIDGE\nBRIDGE._mplex_validate()\n')
 		# TODO: if output directory does not have a bridge.py, then create one that extends GeneratedBridge.

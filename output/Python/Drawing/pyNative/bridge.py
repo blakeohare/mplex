@@ -1,6 +1,8 @@
 from PIL import Image
 import os
 
+from .genbridge import GeneratedBridge
+
 class Bridge(GeneratedBridge):
 	def CreateBitmapFile(self, nativeData, path):
 		if not os.path.exists(path):
@@ -54,3 +56,5 @@ class Bridge(GeneratedBridge):
 
 	def DrawBitmap(self, pixelNativeData, bmp2NativeData, pixel2NativeData, x, y):
 		raise Exception("Not implemented.")
+
+BRIDGE = Bridge()

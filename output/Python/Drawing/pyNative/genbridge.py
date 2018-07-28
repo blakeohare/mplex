@@ -21,4 +21,4 @@ class GeneratedBridge:
 	def DrawBitmap(self, pixelNativeData, bmp2NativeData, pixel2NativeData, x, y):
 		raise Exception("Not implemented.")
 
-	def _mplex_validate(): pass
+	def _mplex_validate(self): pass

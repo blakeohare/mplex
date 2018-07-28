@@ -30,4 +30,4 @@ class GeneratedBridge:
 	def PopEvents(self, windowId, intOut, strOut):
 		raise Exception("Not implemented.")
 
-	def _mplex_validate(): pass
+	def _mplex_validate(self): pass
