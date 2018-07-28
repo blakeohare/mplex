@@ -3,7 +3,6 @@ from .pyNative import BRIDGE as _BRIDGE
 class BaseGame:
 	def __init__(self): pass
 	def on_mouse_move(self, pos): pass
-	def on_mouse_move(self, pos): pass
 	def on_mouse_left_down(self, pos): pass
 	def on_mouse_left_up(self, pos): pass
 	def on_mouse_right_down(self, pos): pass

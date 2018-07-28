@@ -50,7 +50,7 @@
       <Project>{094389df-e243-429c-9483-0e737212a453}</Project>
       <Name>Drawing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Game\Game\Game.csproj">
+    <ProjectReference Include="..\..\Game\Game.csproj">
       <Project>{ed64132e-8c1d-430c-bc79-f6084800cd05}</Project>
       <Name>Game</Name>
     </ProjectReference>

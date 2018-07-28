@@ -2,7 +2,7 @@ namespace Game
 {
     internal abstract class AbstractBridge
     {
-        public abstract void CreateWindow(int gameWidth, int gameHeight, int pixelWidth, int pixelHeight, string title, int fps);
+        public abstract int CreateWindow(int gameWidth, int gameHeight, int pixelWidth, int pixelHeight, string title, int fps);
         public abstract void ShowWindow(int windowId);
         public abstract bool IsWindowCreationBlocking();
         public abstract void SetGameLoopCallback(int windowId, System.Func<int, int> callback);

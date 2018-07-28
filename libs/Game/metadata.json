@@ -12,7 +12,8 @@
 				{ "name": "fps", "type": "int" }
 			],
 			"returns": {
-				"type": "void"
+				"type": "int",
+				"description": "Object ID for the window to be used in future function calls."
 			}
 		},
 		{
