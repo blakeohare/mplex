@@ -45,7 +45,7 @@ def get_libraries():
 def main():
 	generators = [
 		#CGenerator(),
-		#CSharpGenerator(),
+		CSharpGenerator(),
 		#JavaGenerator(),
 		#JavaScriptGenerator(),
 		#PHPGenerator(),
